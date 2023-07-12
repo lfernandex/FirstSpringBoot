@@ -1,6 +1,7 @@
 package com.fernandes.firstproject.dto;
 
 import com.fernandes.firstproject.entities.Game;
+import com.fernandes.firstproject.projections.GameMinProjection;
 
 public class GameMinDTO {
 	
@@ -20,6 +21,14 @@ public class GameMinDTO {
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
+	}
+	
+	public GameMinDTO(GameMinProjection pojection) {
+		id = pojection.getId();
+		title = pojection.getTitle();
+		year = pojection.getYear();
+		imgUrl = pojection.getImgUrl();
+		shortDescription = pojection.getShortDescription();
 	}
 
 	public Long getId() {
