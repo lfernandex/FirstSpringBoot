@@ -20,6 +20,11 @@ public class GameController {
 	@Autowired
 	private GameService gameService;
 	
+	@GetMapping
+	public List<GameMinDTO> findAll(){
+	var result = gameService.findAll();
+	return result;
+	}
 	
 	@GetMapping(value = "/{id}")
 	public GameDTO findById(@PathVariable Long id){
@@ -28,10 +33,5 @@ public class GameController {
 	}
 	
 	
-	@GetMapping
-	public List<GameMinDTO> findAll(){
-	var result = gameService.findAll();
-	return result;
-	}
 
 }
